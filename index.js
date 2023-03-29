@@ -29,3 +29,12 @@ function szar(N,M){
             alert('Hiba.')
     }
 }
+function busz(km,nap,utas){
+    return ['km:',640*km*Math.ceil(utas/49),'napi:',40000*nap*Math.ceil(utas/49)]
+}
+function auto(km){
+    return ['km:',84*km,'benzin:',(0.07*1.5*km)]
+}
+function tomegk(ut,fo){
+    return ut*fo*2600
+}
