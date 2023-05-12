@@ -2,8 +2,11 @@ let tav = 250;
 let tanulok = 49;
 let tanar = 1;
 let sofor = 1;
+let x = szar(N= document.getElementById("napszam").value,M= document.getElementById("letszam").value)
+document.getElementById("sziaaa").innerHTML = szar();
 //meg tudom magyarázni!!! sz = szállás ar = ár, rossz az aki rosszra gondol 😁
-function szar(N,M){    
+function szar(N= document.getElementById("napszam").value,M= document.getElementById("letszam").value){    
+   
     switch(true){
         case (N>=30):
             if (M>=2){
@@ -27,14 +30,25 @@ function szar(N,M){
             return 12500
         case (N<=0):
             alert('Hiba.')
+    
     }
+   
 }
-function busz(km,nap,utas){
-    return ['km:',640*km*Math.ceil(utas/49),'napi:',40000*nap*Math.ceil(utas/49)]
+
+function busz(km = 250,nap = document.getElementById("napszam").value ,utas = document.getElementById("letszam").value){
+    a =(640*km*Math.ceil(utas/49))
+    b =(40000*nap*Math.ceil(utas/49))
+    document.getElementById("eredmeny").innerHTML = "busz út ára"+a+"ft"+ "busz bérlés ára"+ b +"ft";
+ 
+    
 }
-function auto(km){
-    return ['km:',84*km,'benzin:',(0.07*1.5*km)]
+function auto(km = 250){
+    
+   a = ['km:',84*km,'benzin:',(0.07*1.5*km)]
+   document.getElementById("eredmeny").innerHTML = "az aoutó út ára"+a+"ft"
 }
-function tomegk(ut,fo){
+function tomegk(ut = 250,fo = document.getElementById("letszam").value){
     return ut*fo*2600
 }
+
+
